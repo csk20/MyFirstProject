@@ -1,0 +1,50 @@
+	http://localhost:3030/MVCAnnotationLoginAppSFC1/rest/login
+	
+	
+	{
+	"user":"chandan",
+     "pwd":"chandan"
+     }
+	
+		private String user;
+	
+	private String pwd;
+	
+	
+	@RequestMapping(value="/login",method=RequestMethod.POST, consumes ="application/json" )
+	public @ResponseBody String  processPage(@RequestBody UserDTO dto,@Valid @ModelAttribute("userCmd")UserCommand cmd,BindingResult errors) {
+		===============================================
+		
+		http://localhost:3030/MVCAnnotationLoginAppSFC1/rest/add
+		
+			{
+			"name":"chandan",
+	"useidr":"qolsys",
+     "pwd":"qolsys",
+     "phone":"56476474",
+     "gender":"Male"
+     }
+				
+	private String name;
+	@NotNull
+	private String userid;
+	@NotNull
+	private String pwd;
+	private String phone;
+	private String gender;
+	===================================================
+	http://localhost:3030/MVCAnnotationLoginAppSFC1/rest/getUser?name=chandan
+	
+		
+	@RequestMapping(value="/getUser",method=RequestMethod.GET, produces = { "application/json","application/xml"
+	 })
+	public @ResponseBody  UserDTO getOneUser(@RequestParam("name") String name) {
+	================================================================================
+	
+	
+	http://localhost:3030/MVCAnnotationLoginAppSFC1/rest/getUser/chandan
+	@RequestMapping(value="/getUser/{name}",method=RequestMethod.GET, produces = { "application/json","application/xml"
+	 })
+	public @ResponseBody  UserDTO getOneUser(@PathVariable("name") String name) {
+	
+	
