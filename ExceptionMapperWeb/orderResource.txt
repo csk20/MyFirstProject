@@ -1,0 +1,85 @@
+
+http://localhost:3030/ExceptionMapperWeb/order/
+
+
+http://localhost:3030/ExceptionMapperWeb/order/placeOrder/
+
+
+<orderId></orderId>
+<itemCode><?itemCode>
+
+
+
+{
+"orderId":"1",
+"itemCode":"12344",
+"itemQuantity":"3",
+"city":"hyd",
+"state":"TS",
+"country":"IND",
+}
+
+
+	private String orderId;
+	private String itemCode;
+	private String itemQuantity;
+	private String city;
+	private String state;
+	private String country;
+
+
+
+http://localhost:3030/ExceptionMapperWeb/order/getOrderInfo/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@Path("/order")
+public class OrderResource {
+
+	private Map<String, OrderInfo> ordersMap = null;
+
+	public OrderResource() {
+		ordersMap = new HashMap<String, OrderInfo>();
+	}
+
+	@Path("/placeOrder")
+	@POST
+	@Consumes(MediaType.APPLICATION_XML)
+	public Response placeOrder(OrderInfo orderInfo) throws Exception {
+		Response response = null;
+		System.out.println(orderInfo);
+		String itemCode = orderInfo.getItemCode();
+		if (itemCode != null && !itemCode.equals("")) {
+			ordersMap.put(orderInfo.getOrderId(), orderInfo);
+			response = Response.created(new URI("/rest/order/placeOrder"))
+					.build();
+		} else {
+			throw new InvalidInputException("Item Code is Mandatory..!!");
+		}
+		return response;
+	}
+
+	@Path("/getOrderInfo")
+	@GET
+	@Consumes(MediaType.APPLICATION_XML)
+	public Response fetchOrderInfo(@QueryParam("oid") String oid)
