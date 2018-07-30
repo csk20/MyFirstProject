@@ -1,13 +1,13 @@
 package com.qolsys.view;
 
-import java.awt.Point;
+
 import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.hibernate.dialect.FrontBaseDialect;
+
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.view.document.AbstractPdfView;
 

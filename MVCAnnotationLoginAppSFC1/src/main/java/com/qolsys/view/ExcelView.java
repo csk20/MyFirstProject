@@ -9,16 +9,10 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
-import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.view.document.AbstractXlsView;
 
 
-import com.qolsys.bo.RegisterBO;
-import com.qolsys.bo.UserBO;
-import com.qolsys.dao.RegisterDAOImpl;
-import com.qolsys.dto.RegisterDTO;
 import com.qolsys.dto.UserDTO;
 @Component
 public class ExcelView extends AbstractXlsView {
