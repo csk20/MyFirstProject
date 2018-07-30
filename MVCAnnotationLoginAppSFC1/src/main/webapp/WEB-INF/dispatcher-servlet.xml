@@ -14,13 +14,13 @@
  <mvc:annotation-driven/>
 
  <!-- View classes cfg -->
-<bean class="com.qolsys.view.ExcelView" id="ExcelView"/>
+<!-- <bean class="com.qolsys.view.ExcelView" id="ExcelView"/>
 <bean class="com.qolsys.view.PdfView" id="PdfView"/>
-<!-- View Resolvers cfg -->
+View Resolvers cfg
 
 
 <bean class="org.springframework.web.servlet.view.BeanNameViewResolver"/>
-
+ -->
 <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 
 
